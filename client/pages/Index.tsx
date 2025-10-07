@@ -38,7 +38,7 @@ export default function Index() {
       <main className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col items-center px-6 py-16 sm:px-8 sm:py-24 lg:px-12">
         <section className="w-full py-12 sm:py-16 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
-            <div className="space-y-10">
+            <div className="space-y-9">
               <div className="flex items-center gap-4">
                 <img
                   src={MONX_LOGO}
@@ -47,19 +47,19 @@ export default function Index() {
                   loading="lazy"
                 />
               </div>
-              <div className="space-y-6">
+              <div className="space-y-6 pt-6">
                 <h1
-                  className="bg-gradient-to-r from-brand-cyan via-white to-brand-navy-soft bg-clip-text text-balance text-4xl font-extrabold leading-[1.05] text-transparent sm:text-5xl lg:text-6xl"
-                  style={{ letterSpacing: "-0.02em" }}
+                  className="bg-gradient-to-r from-brand-cyan via-white to-brand-navy-soft bg-clip-text text-balance text-4xl font-semibold leading-[1.08] text-transparent sm:text-5xl lg:text-[3.4375rem]"
+                  style={{ letterSpacing: "-0.022em" }}
                 >
                   Reimagining Manufacturing Intelligence.
                 </h1>
-                <p className="max-w-xl text-lg text-white/70 sm:text-xl">
+                <p className="max-w-xl text-lg text-white/75 sm:text-xl">
                   Where data meets precision. MONX is building the next
                   generation of AI-powered manufacturing performance tools.
                 </p>
               </div>
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="mt-6 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center">
                 <a
                   href="mailto:bharvi.desai@hotmail.com"
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand-cyan/40 bg-gradient-to-r from-brand-cyan/90 via-brand-cyan/80 to-brand-navy-soft/90 px-8 py-3 text-base font-semibold text-[hsl(var(--primary-foreground))] shadow-glow-cyan transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(32,174,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
@@ -68,7 +68,7 @@ export default function Index() {
                   Stay Connected
                   <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
-                <div className="flex items-center gap-3 text-sm text-white/50">
+                <div className="flex items-center gap-3 text-sm text-white/55">
                   <span className="h-1 w-8 rounded-full bg-gradient-to-r from-white/40 to-transparent" />
                   <span>Discover the future of connected factories.</span>
                 </div>
