@@ -1,13 +1,18 @@
 import { CSSProperties } from "react";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
-const insightTiles = [
-  { label: "Throughput", value: "+18%" },
-  { label: "Yield", value: "99.2%" },
-  { label: "Downtime", value: "-12%" },
-  { label: "Quality", value: "+21%" },
-  { label: "Maintenance", value: "4.6h" },
-  { label: "Logistics", value: "On-Time" },
+const MONX_LOGO =
+  "https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2F100014172f174cbc96fe7a1aa6694983?format=webp&width=800";
+
+type InsightVisualType = "spark" | "gauge" | "curve";
+
+const insightTiles: { label: string; value: string; visual: InsightVisualType }[] = [
+  { label: "Throughput", value: "+18%", visual: "spark" },
+  { label: "Yield", value: "99.2%", visual: "spark" },
+  { label: "Downtime", value: "-12%", visual: "spark" },
+  { label: "Quality", value: "+21%", visual: "spark" },
+  { label: "OEE (Overall Equipment Effectiveness)", value: "92%", visual: "gauge" },
+  { label: "Process Capability Index (Cpk)", value: "1.67", visual: "curve" },
 ];
 
 const gridOverlayStyle: CSSProperties = {
@@ -26,11 +31,19 @@ export default function Index() {
         <section className="w-full py-12 sm:py-16 lg:py-20">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
             <div className="space-y-10">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/70 backdrop-blur">
-                MONX • AI // Industrial
-              </span>
+              <div className="flex items-center gap-4">
+                <img
+                  src={MONX_LOGO}
+                  alt="MONX logo"
+                  className="h-12 w-auto drop-shadow-[0_18px_55px_rgba(32,174,255,0.35)]"
+                  loading="lazy"
+                />
+              </div>
               <div className="space-y-6">
-                <h1 className="bg-gradient-to-r from-brand-cyan via-white to-brand-navy-soft bg-clip-text text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
+                <h1
+                  className="bg-gradient-to-r from-brand-cyan via-white to-brand-navy-soft bg-clip-text text-balance text-4xl font-extrabold leading-[1.05] text-transparent sm:text-5xl lg:text-6xl"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
                   Reimagining Manufacturing Intelligence.
                 </h1>
                 <p className="max-w-xl text-lg text-white/70 sm:text-xl">
@@ -39,7 +52,7 @@ export default function Index() {
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
-                  href="#contact"
+                  href="mailto:bharvi.desai@hotmail.com"
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand-cyan/40 bg-gradient-to-r from-brand-cyan/90 via-brand-cyan/80 to-brand-navy-soft/90 px-8 py-3 text-base font-semibold text-[hsl(var(--primary-foreground))] shadow-glow-cyan transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(32,174,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
                 >
                   <span className="absolute inset-0 -z-10 bg-gradient-to-r from-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -81,21 +94,21 @@ export default function Index() {
                 <div className="flex flex-col gap-5 text-base text-white/70">
                   <a
                     className="inline-flex items-center gap-3 transition-colors duration-200 hover:text-brand-cyan"
-                    href="mailto:bharvi@monx.tech"
+                    href="mailto:bharvi.desai@hotmail.com"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan">
                       <Mail className="h-5 w-5" />
                     </span>
-                    bharvi@monx.tech
+                    bharvi.desai@hotmail.com
                   </a>
                   <a
                     className="inline-flex items-center gap-3 text-white/60 transition-colors duration-200 hover:text-brand-cyan/90"
-                    href="tel:+18005550199"
+                    href="tel:+917016528271"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60">
                       <Phone className="h-5 w-5" />
                     </span>
-                    +1 (800) 555-0199
+                    +91 7016528271
                   </a>
                 </div>
                 <button
@@ -124,7 +137,7 @@ function FuturisticTelemetryPanel() {
       <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-brand-navy-soft/70 via-brand-graphite/40 to-brand-cyan/10 p-8 backdrop-blur-2xl shadow-[0_0_80px_rgba(32,174,255,0.22)]">
         <div className="absolute inset-0 opacity-40" style={gridOverlayStyle} />
         <div className="absolute inset-0">
-          <div className="absolute left-1/2 top-8 h-24 w-24 -translate-x-1/2 rounded-full bg-brand-cyan/20 blur-3xl" />
+          <div className="absolute left-1/2top-8 h-24 w-24 -translate-x-1/2 rounded-full bg-brand-cyan/20 blur-3xl" />
           <div className="absolute bottom-10 left-10 h-20 w-20 rounded-full bg-brand-cyan/15 blur-2xl" />
         </div>
         <div className="relative flex h-full flex-col justify-between">
@@ -147,6 +160,7 @@ function FuturisticTelemetryPanel() {
                 <span className="relative mt-3 block text-2xl font-semibold text-white">
                   {tile.value}
                 </span>
+                <InsightVisual type={tile.visual} />
                 <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-cyan/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </div>
             ))}
@@ -167,6 +181,108 @@ function FuturisticTelemetryPanel() {
         </div>
       </div>
     </div>
+  );
+}
+
+function InsightVisual({ type }: { type: InsightVisualType }) {
+  switch (type) {
+    case "gauge":
+      return <GaugeVisual />;
+    case "curve":
+      return <CurveVisual />;
+    default:
+      return <SparklineVisual />;
+  }
+}
+
+function SparklineVisual() {
+  return (
+    <svg viewBox="0 0 120 40" className="mt-5 h-12 w-full">
+      <defs>
+        <linearGradient id="monxSpark" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="rgba(32, 174, 255, 0.05)" />
+          <stop offset="50%" stopColor="rgba(32, 174, 255, 0.45)" />
+          <stop offset="100%" stopColor="rgba(255, 255, 255, 0.35)" />
+        </linearGradient>
+      </defs>
+      <polyline
+        points="5,30 20,18 35,24 50,12 65,18 80,8 95,14 110,6"
+        fill="none"
+        stroke="url(#monxSpark)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <line x1="5" y1="32" x2="110" y2="32" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+    </svg>
+  );
+}
+
+function GaugeVisual() {
+  return (
+    <svg viewBox="0 0 120 70" className="mt-6 h-16 w-full">
+      <defs>
+        <linearGradient id="monxGauge" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="rgba(32, 174, 255, 0.2)" />
+          <stop offset="55%" stopColor="rgba(32, 174, 255, 0.7)" />
+          <stop offset="100%" stopColor="rgba(255, 255, 255, 0.85)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M12 58 A48 48 0 0 1 108 58"
+        stroke="rgba(255,255,255,0.12)"
+        strokeWidth="6"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path
+        d="M12 58 A48 48 0 0 1 108 58"
+        stroke="url(#monxGauge)"
+        strokeWidth="6"
+        fill="none"
+        strokeLinecap="round"
+        strokeDasharray="150"
+        strokeDashoffset="45"
+      />
+      <line
+        x1="60"
+        y1="58"
+        x2="100"
+        y2="40"
+        stroke="rgba(32,174,255,0.85)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="60" cy="58" r="5" fill="rgba(32,174,255,0.85)" />
+    </svg>
+  );
+}
+
+function CurveVisual() {
+  return (
+    <svg viewBox="0 0 120 70" className="mt-6 h-16 w-full">
+      <defs>
+        <linearGradient id="monxCurve" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="rgba(32, 174, 255, 0.08)" />
+          <stop offset="50%" stopColor="rgba(32, 174, 255, 0.5)" />
+          <stop offset="100%" stopColor="rgba(255, 255, 255, 0.35)" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M5 60 C 25 25, 45 10, 60 18 C 75 26, 95 60, 115 60"
+        fill="url(#monxCurve)"
+        opacity="0.6"
+      />
+      <path
+        d="M5 60 C 25 25, 45 10, 60 18 C 75 26, 95 60, 115 60"
+        fill="none"
+        stroke="rgba(32,174,255,0.85)"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <line x1="5" y1="60" x2="115" y2="60" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+    </svg>
   );
 }
 
