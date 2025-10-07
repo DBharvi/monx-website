@@ -1,62 +1,181 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { CSSProperties } from "react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
+
+const insightTiles = [
+  { label: "Throughput", value: "+18%" },
+  { label: "Yield", value: "99.2%" },
+  { label: "Downtime", value: "-12%" },
+  { label: "Quality", value: "+21%" },
+  { label: "Maintenance", value: "4.6h" },
+  { label: "Logistics", value: "On-Time" },
+];
+
+const gridOverlayStyle: CSSProperties = {
+  backgroundImage:
+    "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+  backgroundSize: "48px 48px",
+};
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-            />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
-            />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
+    <div className="relative flex min-h-screen flex-col overflow-hidden bg-[hsl(var(--background))] text-foreground">
+      <div className="pointer-events-none absolute inset-0 -z-20 bg-monx-hero" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-monx-grid opacity-70 mix-blend-screen" />
+      <div className="pointer-events-none absolute left-1/2 top-[-10%] -z-10 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-brand-cyan/20 blur-[140px]" />
+      <main className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col items-center px-6 py-16 sm:px-8 sm:py-24 lg:px-12">
+        <section className="w-full py-12 sm:py-16 lg:py-20">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center">
+            <div className="space-y-10">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-white/70 backdrop-blur">
+                MONX • AI // Industrial
+              </span>
+              <div className="space-y-6">
+                <h1 className="bg-gradient-to-r from-brand-cyan via-white to-brand-navy-soft bg-clip-text text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-transparent sm:text-5xl lg:text-6xl">
+                  Reimagining Manufacturing Intelligence.
+                </h1>
+                <p className="max-w-xl text-lg text-white/70 sm:text-xl">
+                  Where data meets precision. MONX is building the next generation of AI-powered manufacturing performance tools.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <a
+                  href="#contact"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand-cyan/40 bg-gradient-to-r from-brand-cyan/90 via-brand-cyan/80 to-brand-navy-soft/90 px-8 py-3 text-base font-semibold text-[hsl(var(--primary-foreground))] shadow-glow-cyan transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(32,174,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                >
+                  <span className="absolute inset-0 -z-10 bg-gradient-to-r from-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  Stay Connected
+                  <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </a>
+                <div className="flex items-center gap-3 text-sm text-white/50">
+                  <span className="h-1 w-8 rounded-full bg-gradient-to-r from-white/40 to-transparent" />
+                  <span>Discover the future of connected factories.</span>
+                </div>
+              </div>
+            </div>
+            <FuturisticTelemetryPanel />
+          </div>
+        </section>
+        <section className="w-full py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl space-y-6 text-center">
+            <h2 className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-cyan/80">About MONX</h2>
+            <p className="text-balance text-lg text-white/70 sm:text-xl">
+              MONX empowers manufacturers to optimize operations, enhance efficiency, and drive sustainable growth through connected intelligence.
+            </p>
+          </div>
+          <div className="mx-auto mt-14 h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+        </section>
+        <section id="contact" className="w-full py-16 sm:py-20">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-2xl shadow-[0_0_70px_rgba(32,174,255,0.18)] sm:p-12">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(32,174,255,0.25),transparent_65%)] opacity-80" />
+            <div className="absolute -right-32 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full border border-brand-cyan/30" />
+            <div className="relative space-y-10">
+              <div className="space-y-4 text-center sm:text-left">
+                <h3 className="text-2xl font-semibold text-white sm:text-3xl">
+                  We’re launching soon. Be the first to know when MONX goes live.
+                </h3>
+                <p className="text-base text-white/65">
+                  We’re curating a community of forward-thinking manufacturers ready to transform their production lines.
+                </p>
+              </div>
+              <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-5 text-base text-white/70">
+                  <a
+                    className="inline-flex items-center gap-3 transition-colors duration-200 hover:text-brand-cyan"
+                    href="mailto:bharvi@monx.tech"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan">
+                      <Mail className="h-5 w-5" />
+                    </span>
+                    bharvi@monx.tech
+                  </a>
+                  <a
+                    className="inline-flex items-center gap-3 text-white/60 transition-colors duration-200 hover:text-brand-cyan/90"
+                    href="tel:+18005550199"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60">
+                      <Phone className="h-5 w-5" />
+                    </span>
+                    +1 (800) 555-0199
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-white/15 px-10 py-3 text-base font-semibold text-white shadow-[0_0_30px_rgba(32,174,255,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_40px_rgba(32,174,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                >
+                  <span className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-cyan/40 via-transparent to-brand-cyan/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  Notify Me
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function FuturisticTelemetryPanel() {
+  return (
+    <div className="relative hidden w-full max-w-lg justify-center lg:flex">
+      <div className="absolute inset-0 -z-20 blur-3xl">
+        <div className="mx-auto h-full w-full rounded-full bg-brand-cyan/20" />
+      </div>
+      <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-brand-navy-soft/70 via-brand-graphite/40 to-brand-cyan/10 p-8 backdrop-blur-2xl shadow-[0_0_80px_rgba(32,174,255,0.22)]">
+        <div className="absolute inset-0 opacity-40" style={gridOverlayStyle} />
+        <div className="absolute inset-0">
+          <div className="absolute left-1/2 top-8 h-24 w-24 -translate-x-1/2 rounded-full bg-brand-cyan/20 blur-3xl" />
+          <div className="absolute bottom-10 left-10 h-20 w-20 rounded-full bg-brand-cyan/15 blur-2xl" />
+        </div>
+        <div className="relative flex h-full flex-col justify-between">
+          <div className="flex items-center justify-between text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-white/55">
+            <span>Connected Machines</span>
+            <span className="inline-flex items-center gap-2 text-brand-cyan">
+              <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-brand-cyan shadow-[0_0_12px_rgba(32,174,255,0.8)]" />
+              Live
+            </span>
+          </div>
+          <div className="grid flex-1 grid-cols-2 gap-3 py-6 sm:grid-cols-3">
+            {insightTiles.map((tile) => (
+              <div
+                key={tile.label}
+                className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 px-4 py-5 transition-all duration-500 hover:-translate-y-1 hover:border-brand-cyan/50 hover:shadow-[0_18px_40px_rgba(32,174,255,0.25)]"
+              >
+                <span className="relative text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-white/50">
+                  {tile.label}
+                </span>
+                <span className="relative mt-3 block text-2xl font-semibold text-white">
+                  {tile.value}
+                </span>
+                <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-cyan/25 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              </div>
+            ))}
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between text-[0.65rem] uppercase tracking-[0.3em] text-white/55">
+              <span>Signal Integrity</span>
+              <span>AI Confidence</span>
+            </div>
+            <div className="h-2 overflow-hidden rounded-full bg-white/10">
+              <div className="h-full w-[82%] rounded-full bg-gradient-to-r from-brand-cyan via-white to-brand-cyan" />
+            </div>
+            <div className="flex justify-between text-[0.65rem] text-white/45">
+              <span>Node Capacity</span>
+              <span>93% Utilized</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-white/10 bg-brand-graphite-dim/40">
+      <div className="mx-auto max-w-6xl px-6 py-10 text-center text-sm text-white/55 sm:px-8">
+        © 2025 MONX — Built with purpose for manufacturing excellence.
+      </div>
+    </footer>
   );
 }
