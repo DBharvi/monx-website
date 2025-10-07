@@ -6,12 +6,20 @@ const MONX_LOGO =
 
 type InsightVisualType = "spark" | "gauge" | "curve";
 
-const insightTiles: { label: string; value: string; visual: InsightVisualType }[] = [
+const insightTiles: {
+  label: string;
+  value: string;
+  visual: InsightVisualType;
+}[] = [
   { label: "Throughput", value: "+18%", visual: "spark" },
   { label: "Yield", value: "99.2%", visual: "spark" },
   { label: "Downtime", value: "-12%", visual: "spark" },
   { label: "Quality", value: "+21%", visual: "spark" },
-  { label: "OEE (Overall Equipment Effectiveness)", value: "92%", visual: "gauge" },
+  {
+    label: "OEE (Overall Equipment Effectiveness)",
+    value: "92%",
+    visual: "gauge",
+  },
   { label: "Process Capability Index (Cpk)", value: "1.67", visual: "curve" },
 ];
 
@@ -47,7 +55,8 @@ export default function Index() {
                   Reimagining Manufacturing Intelligence.
                 </h1>
                 <p className="max-w-xl text-lg text-white/70 sm:text-xl">
-                  Where data meets precision. MONX is building the next generation of AI-powered manufacturing performance tools.
+                  Where data meets precision. MONX is building the next
+                  generation of AI-powered manufacturing performance tools.
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -70,9 +79,13 @@ export default function Index() {
         </section>
         <section className="w-full py-16 sm:py-20">
           <div className="mx-auto max-w-3xl space-y-6 text-center">
-            <h2 className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-cyan/80">About MONX</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-cyan/80">
+              About MONX
+            </h2>
             <p className="text-balance text-lg text-white/70 sm:text-xl">
-              MONX empowers manufacturers to optimize operations, enhance efficiency, and drive sustainable growth through connected intelligence.
+              MONX empowers manufacturers to optimize operations, enhance
+              efficiency, and drive sustainable growth through connected
+              intelligence.
             </p>
           </div>
           <div className="mx-auto mt-14 h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-white/30 to-transparent" />
@@ -84,10 +97,12 @@ export default function Index() {
             <div className="relative space-y-10">
               <div className="space-y-4 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold text-white sm:text-3xl">
-                  We’re launching soon. Be the first to know when MONX goes live.
+                  We’re launching soon. Be the first to know when MONX goes
+                  live.
                 </h3>
                 <p className="text-base text-white/65">
-                  We’re curating a community of forward-thinking manufacturers ready to transform their production lines.
+                  We’re curating a community of forward-thinking manufacturers
+                  ready to transform their production lines.
                 </p>
               </div>
               <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
@@ -214,7 +229,14 @@ function SparklineVisual() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <line x1="5" y1="32" x2="110" y2="32" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+      <line
+        x1="5"
+        y1="32"
+        x2="110"
+        y2="32"
+        stroke="rgba(255,255,255,0.08)"
+        strokeWidth="1"
+      />
     </svg>
   );
 }
@@ -284,7 +306,14 @@ function CurveVisual() {
         strokeWidth="3"
         strokeLinecap="round"
       />
-      <line x1="5" y1="60" x2="115" y2="60" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+      <line
+        x1="5"
+        y1="60"
+        x2="115"
+        y2="60"
+        stroke="rgba(255,255,255,0.1)"
+        strokeWidth="1"
+      />
     </svg>
   );
 }

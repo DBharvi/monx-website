@@ -66,11 +66,23 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Nunito", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", "sans-serif"],
+        sans: [
+          "Nunito",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Helvetica",
+          "Arial",
+          "sans-serif",
+        ],
       },
       backgroundImage: {
-        "monx-hero": "radial-gradient(120% 180% at 50% 0%, rgba(28, 44, 84, 0.9) 0%, rgba(11, 15, 32, 0.95) 60%, rgba(4, 6, 18, 1) 100%)",
-        "monx-grid": "linear-gradient(115deg, rgba(32, 174, 255, 0.12) 0%, rgba(32, 174, 255, 0) 65%), linear-gradient(135deg, rgba(94, 116, 147, 0.18) 10%, rgba(12, 20, 38, 0) 70%)",
+        "monx-hero":
+          "radial-gradient(120% 180% at 50% 0%, rgba(28, 44, 84, 0.9) 0%, rgba(11, 15, 32, 0.95) 60%, rgba(4, 6, 18, 1) 100%)",
+        "monx-grid":
+          "linear-gradient(115deg, rgba(32, 174, 255, 0.12) 0%, rgba(32, 174, 255, 0) 65%), linear-gradient(135deg, rgba(94, 116, 147, 0.18) 10%, rgba(12, 20, 38, 0) 70%)",
       },
       boxShadow: {
         "glow-cyan": "0 0 45px rgba(32, 174, 255, 0.35)",
