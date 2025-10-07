@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, useId } from "react";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
 const MONX_LOGO =
@@ -137,7 +137,7 @@ function FuturisticTelemetryPanel() {
       <div className="relative aspect-square w-full overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-brand-navy-soft/70 via-brand-graphite/40 to-brand-cyan/10 p-8 backdrop-blur-2xl shadow-[0_0_80px_rgba(32,174,255,0.22)]">
         <div className="absolute inset-0 opacity-40" style={gridOverlayStyle} />
         <div className="absolute inset-0">
-          <div className="absolute left-1/2top-8 h-24 w-24 -translate-x-1/2 rounded-full bg-brand-cyan/20 blur-3xl" />
+          <div className="absolute left-1/2 top-8 h-24 w-24 -translate-x-1/2 rounded-full bg-brand-cyan/20 blur-3xl" />
           <div className="absolute bottom-10 left-10 h-20 w-20 rounded-full bg-brand-cyan/15 blur-2xl" />
         </div>
         <div className="relative flex h-full flex-col justify-between">
@@ -196,10 +196,11 @@ function InsightVisual({ type }: { type: InsightVisualType }) {
 }
 
 function SparklineVisual() {
+  const gradientId = `spark-${useId().replace(/:/g, "")}`;
   return (
     <svg viewBox="0 0 120 40" className="mt-5 h-12 w-full">
       <defs>
-        <linearGradient id="monxSpark" x1="0%" y1="0%" x2="100%" y2="0%">
+        <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="rgba(32, 174, 255, 0.05)" />
           <stop offset="50%" stopColor="rgba(32, 174, 255, 0.45)" />
           <stop offset="100%" stopColor="rgba(255, 255, 255, 0.35)" />
@@ -208,7 +209,7 @@ function SparklineVisual() {
       <polyline
         points="5,30 20,18 35,24 50,12 65,18 80,8 95,14 110,6"
         fill="none"
-        stroke="url(#monxSpark)"
+        stroke={`url(#${gradientId})`}
         strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -219,10 +220,11 @@ function SparklineVisual() {
 }
 
 function GaugeVisual() {
+  const gradientId = `gauge-${useId().replace(/:/g, "")}`;
   return (
     <svg viewBox="0 0 120 70" className="mt-6 h-16 w-full">
       <defs>
-        <linearGradient id="monxGauge" x1="0%" y1="100%" x2="100%" y2="0%">
+        <linearGradient id={gradientId} x1="0%" y1="100%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="rgba(32, 174, 255, 0.2)" />
           <stop offset="55%" stopColor="rgba(32, 174, 255, 0.7)" />
           <stop offset="100%" stopColor="rgba(255, 255, 255, 0.85)" />
@@ -237,7 +239,7 @@ function GaugeVisual() {
       />
       <path
         d="M12 58 A48 48 0 0 1 108 58"
-        stroke="url(#monxGauge)"
+        stroke={`url(#${gradientId})`}
         strokeWidth="6"
         fill="none"
         strokeLinecap="round"
@@ -260,10 +262,11 @@ function GaugeVisual() {
 }
 
 function CurveVisual() {
+  const gradientId = `curve-${useId().replace(/:/g, "")}`;
   return (
     <svg viewBox="0 0 120 70" className="mt-6 h-16 w-full">
       <defs>
-        <linearGradient id="monxCurve" x1="0%" y1="100%" x2="100%" y2="0%">
+        <linearGradient id={gradientId} x1="0%" y1="100%" x2="100%" y2="0%">
           <stop offset="0%" stopColor="rgba(32, 174, 255, 0.08)" />
           <stop offset="50%" stopColor="rgba(32, 174, 255, 0.5)" />
           <stop offset="100%" stopColor="rgba(255, 255, 255, 0.35)" />
@@ -271,7 +274,7 @@ function CurveVisual() {
       </defs>
       <path
         d="M5 60 C 25 25, 45 10, 60 18 C 75 26, 95 60, 115 60"
-        fill="url(#monxCurve)"
+        fill={`url(#${gradientId})`}
         opacity="0.6"
       />
       <path
