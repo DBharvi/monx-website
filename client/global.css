@@ -111,4 +111,9 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+
+  ::selection {
+    background-color: hsl(var(--brand-cyan) / 0.35);
+    color: hsl(var(--background));
+  }
 }
