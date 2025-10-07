@@ -2,7 +2,7 @@ import { CSSProperties, useId } from "react";
 import { ArrowRight, Mail, Phone } from "lucide-react";
 
 const MONX_LOGO =
-  "https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2F100014172f174cbc96fe7a1aa6694983?format=webp&width=800";
+  "https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2F03d0bb423fff4d728a7c0c57f11915b1";
 
 type InsightVisualType = "spark" | "gauge" | "curve";
 
