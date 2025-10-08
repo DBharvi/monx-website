@@ -60,11 +60,12 @@ export default function Index() {
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                   }}
->
+                >
                   Intelligence that works as hard as you do.
                 </h1>
                 <p className="max-w-xl text-lg text-white/75 sm:text-xl">
-                  Where data transforms into operational intelligence. Moηx is building AI-powered manufacturing performance tools.
+                  Where data transforms into operational intelligence. Moηx is
+                  building AI-powered manufacturing performance tools.
                 </p>
               </div>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -98,7 +99,9 @@ export default function Index() {
               About MONX
             </h2>
             <p className="text-balance text-lg text-white/70 sm:text-xl">
-              Moηx empowers manufacturers with intelligent, data-driven solutions that optimize operations, enhance efficiency, and drive sustainable growth.
+              Moηx empowers manufacturers with intelligent, data-driven
+              solutions that optimize operations, enhance efficiency, and drive
+              sustainable growth.
             </p>
           </div>
           <div className="mx-auto mt-14 h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-white/30 to-transparent" />
@@ -110,7 +113,8 @@ export default function Index() {
             <div className="relative space-y-10">
               <div className="space-y-4 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold text-white sm:text-3xl">
-                  We’re launching soon. Be the first to know when Moηx goes live.
+                  We’re launching soon. Be the first to know when Moηx goes
+                  live.
                 </h3>
                 <p className="text-base text-white/65">
                   We’re curating a community of forward-thinking manufacturers
