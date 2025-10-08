@@ -53,7 +53,7 @@ export default function Index() {
                   style={{
                     letterSpacing: "-0.022em",
                     backgroundImage:
-                      "url(https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2F2dd8135e9aab47e2852d7197736bb0a7)",
+                      "url(https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2F387cb8b1f35344c194ff81771d9c9c13)",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
