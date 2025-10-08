@@ -68,14 +68,20 @@ export default function Index() {
                   generation of AI-powered manufacturing performance tools.
                 </p>
               </div>
-              <div className="mt-6 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center">
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="mailto:bharvi.desai@hotmail.com"
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand-cyan/40 bg-gradient-to-r from-brand-cyan/90 via-brand-cyan/80 to-brand-navy-soft/90 px-8 py-3 text-base font-semibold text-[hsl(var(--primary-foreground))] shadow-glow-cyan transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(32,174,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-black/50 px-8 py-3 text-base font-semibold text-[#0b1532] shadow-glow-cyan transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(32,174,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
+                  style={{
+                    backgroundImage:
+                      "url(https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2Fe795d51928df4c58a60aeaf430290b31)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
                 >
-                  <span className="absolute inset-0 -z-10 bg-gradient-to-r from-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   Stay Connected
-                  <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="ml-3 h-5 w-5 text-[#0b1532] transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
                 <div className="flex items-center gap-3 text-sm text-white/55">
                   <span className="h-1 w-8 rounded-full bg-gradient-to-r from-white/40 to-transparent" />
