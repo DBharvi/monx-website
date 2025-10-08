@@ -60,8 +60,8 @@ export default function Index() {
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                   }}
-                >
-                  Reimagining Manufacturing Intelligence.
+>
+                  Intelligence that works as hard as you do.
                 </h1>
                 <p className="max-w-xl text-lg text-white/75 sm:text-xl">
                   Where data meets precision. MONX is building the next
