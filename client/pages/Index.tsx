@@ -49,8 +49,17 @@ export default function Index() {
               </div>
               <div className="space-y-6 pt-6">
                 <h1
-                  className="bg-gradient-to-r from-brand-cyan via-white to-brand-navy-soft bg-clip-text text-balance text-4xl font-semibold leading-[1.08] text-transparent sm:text-5xl lg:text-[3.4375rem]"
-                  style={{ letterSpacing: "-0.022em" }}
+                  className="text-balance text-4xl font-semibold leading-[1.18] text-transparent sm:text-5xl lg:text-[3.4375rem]"
+                  style={{
+                    letterSpacing: "-0.022em",
+                    backgroundImage:
+                      "url(https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2F2dd8135e9aab47e2852d7197736bb0a7)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                  }}
                 >
                   Reimagining Manufacturing Intelligence.
                 </h1>
