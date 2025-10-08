@@ -73,10 +73,11 @@ export default function Index() {
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-black/50 px-8 py-3 text-base font-semibold text-[#0b1532] shadow-glow-cyan transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(32,174,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
                   style={{
                     backgroundImage:
-                      "url(https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2Fe795d51928df4c58a60aeaf430290b31)",
+                      "url(https://cdn.builder.io/api/v1/image/assets%2Fd2fe1b8d5c3a4ec5a3cf9529b7d65a9a%2F482039496bb542369f04c9cb1362ac1b)",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
+                    borderWidth: "0.8px",
                   }}
                 >
                   Stay Connected
