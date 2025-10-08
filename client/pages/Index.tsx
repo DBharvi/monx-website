@@ -64,8 +64,7 @@ export default function Index() {
                   Intelligence that works as hard as you do.
                 </h1>
                 <p className="max-w-xl text-lg text-white/75 sm:text-xl">
-                  Where data meets precision. MONX is building the next
-                  generation of AI-powered manufacturing performance tools.
+                  Where data transforms into operational intelligence. Moηx is building AI-powered manufacturing performance tools.
                 </p>
               </div>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
