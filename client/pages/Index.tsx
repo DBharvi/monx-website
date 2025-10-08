@@ -98,9 +98,7 @@ export default function Index() {
               About MONX
             </h2>
             <p className="text-balance text-lg text-white/70 sm:text-xl">
-              MONX empowers manufacturers to optimize operations, enhance
-              efficiency, and drive sustainable growth through connected
-              intelligence.
+              Moηx empowers manufacturers with intelligent, data-driven solutions that optimize operations, enhance efficiency, and drive sustainable growth.
             </p>
           </div>
           <div className="mx-auto mt-14 h-px w-full max-w-4xl bg-gradient-to-r from-transparent via-white/30 to-transparent" />
