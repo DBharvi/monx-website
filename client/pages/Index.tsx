@@ -17,7 +17,7 @@ const insightTiles: {
   { label: "Quality", value: "+21%", visual: "spark" },
   {
     label: "OEE (Overall Equipment Effectiveness)",
-    value: "92%",
+    value: "75%",
     visual: "gauge",
   },
   { label: "Process Capability Index (Cpk)", value: "1.67", visual: "curve" },
