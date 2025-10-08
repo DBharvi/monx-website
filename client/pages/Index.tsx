@@ -110,8 +110,7 @@ export default function Index() {
             <div className="relative space-y-10">
               <div className="space-y-4 text-center sm:text-left">
                 <h3 className="text-2xl font-semibold text-white sm:text-3xl">
-                  We’re launching soon. Be the first to know when MONX goes
-                  live.
+                  We’re launching soon. Be the first to know when Moηx goes live.
                 </h3>
                 <p className="text-base text-white/65">
                   We’re curating a community of forward-thinking manufacturers
