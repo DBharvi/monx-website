@@ -70,7 +70,7 @@ export default function Index() {
               </div>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
-                  href="mailto:bharvi.desai@hotmail.com"
+                  href="mailto:monxtechnology@outlook.com"
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-black/50 px-8 py-3 text-base font-semibold text-[#0b1532] shadow-glow-cyan transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_60px_rgba(32,174,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan"
                   style={{
                     backgroundImage:
@@ -125,12 +125,12 @@ export default function Index() {
                 <div className="flex flex-col gap-5 text-base text-white/70">
                   <a
                     className="inline-flex items-center gap-3 transition-colors duration-200 hover:text-brand-cyan"
-                    href="mailto:bharvi.desai@hotmail.com"
+                    href="mailto:monxtechnology@outlook.com"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-cyan/40 bg-brand-cyan/10 text-brand-cyan">
                       <Mail className="h-5 w-5" />
                     </span>
-                    bharvi.desai@hotmail.com
+                    monxtechnology@outlook.com
                   </a>
                   <a
                     className="inline-flex items-center gap-3 text-white/60 transition-colors duration-200 hover:text-brand-cyan/90"
